@@ -34,10 +34,6 @@ public class MstSkillConfirmPage extends AbstractMstSkillPage {
 		return null;
 	}
 
-	public String getMstSkillTitle(){
-		return "マスタメンテナンス【スキルマスタ】";
-	}
-
 	@TakeOver(type = TakeOverType.NEVER)
 	public Class doFinish() {
 		switch(getCrudType()) {

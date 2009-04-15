@@ -5,19 +5,15 @@
 	<include path="jta.dicon"/>
 	<include path="jdbc-extension.dicon"/>
 
-	<component name="resultSetFactory" class="org.seasar.dao.pager.PagerResultSetFactoryWrapper">
-		<arg>
-			<component class="org.seasar.extension.jdbc.impl.BasicResultSetFactory"/>
-		</arg>
-		<property name="useScrollCursor">true</property>
-	</component>
 	<component class="org.seasar.extension.jdbc.impl.OracleResultSetFactory"/>
 	<component class="org.seasar.extension.jdbc.impl.ConfigurableStatementFactory">
 		<arg>
 			<component class="org.seasar.extension.jdbc.impl.BasicStatementFactory"/>
 		</arg>
 		<property name="fetchSize">100</property>
-		<property name="maxRows">1000</property>
+		<!--
+		<property name="maxRows">100</property>
+		-->
 	</component>
 
 	<!--
@@ -34,8 +30,8 @@
 		<property name="URL">
 			"jdbc:oracle:thin:@xxxxxxxxxx:1521:xx"
 		</property>
-		<property name="user">"xx"</property>
-		<property name="password">"xx"</property>
+		<property name="user">"xxxxx"</property>
+		<property name="password">"xxxxx"</property>
 	</component>
 
 	<component name="connectionPool"

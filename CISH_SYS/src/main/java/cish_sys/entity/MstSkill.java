@@ -10,10 +10,10 @@ import java.util.Date;
 @Bean(table="MST_SKILL")
 public class MstSkill {
 
-//    @Id(IdType.IDENTITY)
+//	@Id(IdType.IDENTITY)
 	private String skillDiv;
 
-//    @Id(IdType.IDENTITY)
+//	@Id(IdType.IDENTITY)
 	private String skillCode;
 
 	private String skillName;

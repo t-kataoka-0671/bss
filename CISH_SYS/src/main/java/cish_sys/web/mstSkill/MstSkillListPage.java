@@ -2,7 +2,6 @@ package cish_sys.web.mstSkill;
 
 import java.util.Date;
 
-import org.seasar.dao.pager.PagerViewHelper;
 import org.seasar.teeda.extension.annotation.convert.DateTimeConverter;
 import org.seasar.teeda.extension.annotation.takeover.TakeOver;
 
@@ -14,7 +13,21 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 
 	private MstSkill[] mstSkillItems;
 
-	private int mstSkillIndex;
+	private int mstSkillIndex = 1;
+
+	private String textSkillCode;
+
+	private String textSkillDiv;
+
+	private Integer offset;
+
+	private Integer currentPageIndex;
+
+	private Integer totalPageIndex;
+
+	private Integer totalNumber;
+
+	private int limit = 10;
 
 	public MstSkillListPage() {
 	}
@@ -31,14 +44,81 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 	*/
 
 	public Class prerender() {
-		mstSkillItems = getMstSkillDao().selectAll();
+		offset = mstSkillIndex;
+
+		MstSkillPagerCondition dto = new MstSkillPagerCondition();
+		dto.setLimit(limit);
+		dto.setOffset(mstSkillIndex);
+
+		mstSkillItems = getMstSkillDao().findBySkillCodeAndSkillDivPagerCondition(textSkillCode, textSkillDiv, dto);
+		totalNumber = dto.getCount();
+
+		calculatePageIndex();
 
 		return null;
 	}
 
-	public String getMstSkillTitle(){
-		return "マスタメンテナンス【スキルマスタ】";
+	public void calculatePageIndex() {
+		currentPageIndex = offset/limit+1;
+		totalPageIndex = totalNumber/limit;
+		if (totalNumber%limit > 0) {
+			totalPageIndex++;
+		}
 	}
+
+	public Class doRetrieve() {
+		return null;
+	}
+
+	public Class doGoFirstPage() {
+		offset = 0;
+		mstSkillIndex = offset;
+		return null;
+	}
+
+	public Class doGoPreviousPage() {
+		mstSkillIndex = offset;
+		if (mstSkillIndex - limit >= 0) {
+			mstSkillIndex -= limit;
+		}
+		return null;
+	}
+
+	public Class doGoNextPage() {
+		mstSkillIndex = offset;
+		prerender();
+		if (mstSkillIndex + limit < totalNumber) {
+			mstSkillIndex += limit;
+		}
+		return null;
+	}
+
+	public Class doGoLastPage() {
+		prerender();
+		offset = (totalPageIndex-1)*limit;
+		mstSkillIndex = offset;
+		return null;
+	}
+
+	public boolean isDoGoFirstPageDisabled() {
+		return offset == 0;
+	}
+
+	public boolean isDoGoPreviousPageDisabled() {
+		return isDoGoFirstPageDisabled();
+	}
+
+	public boolean isDoGoNextPageDisabled() {
+		return currentPageIndex == totalPageIndex;
+	}
+
+	public boolean isDoGoLastPageDisabled() {
+		return isDoGoNextPageDisabled();
+	}
+
+
+
+
 
 	public String getMstSkillRowClass() {
 		if (getMstSkillIndex() % 2 == 0) {
@@ -46,6 +126,7 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 		}
 		return "row_odd";
 	}
+
 
 	@TakeOver(properties = "crudType")
 	public Class doCreate() {
@@ -105,51 +186,50 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 		this.mstSkillIndex = mstSkillIndex;
 	}
 
-//	///////////////////////S2Pager/////////////////////////////
-//	//カレントオフセット
-//	private int offset;
-//	//ページング用
-//	private PagerViewHelper mstSkillPagerViewHelper;
-//	//セッションで管理
-//	private MstSkillPagerCondition mstSkillPagerCondition;
-//
-//	public boolean isPrev(){
-//		return mstSkillPagerViewHelper.isPrev();
-//	}
-//	public boolean isNext(){
-//		return mstSkillPagerViewHelper.isNext();
-//	}
-//	public int getPrevOffset(){
-//		return mstSkillPagerViewHelper.getPrevOffset();
-//	}
-//	public void setPrevOffset(int prevOffset){
-//		this.offset=prevOffset;
-//	}
-//	public int getNextOffset(){
-//		return mstSkillPagerViewHelper.getNextOffset();
-//	}
-//	public void setNextOffset(int nextOffset){
-//		this.offset=nextOffset;
-//	}
-//	//DynamicPropertyでボタンのキャプションを変更
-//	public String getDoPrevValue() {
-//		int limit=this.mstSkillPagerCondition.getLimit();
-//		return "前の" + limit + "件へ";
-//	}
-//	public String getDoNextValue() {
-//		int limit=this.mstSkillPagerCondition.getLimit();
-//		return "次の" + limit + "件へ";
-//	}
-//	//総件数を返す
-//	public int getCount(){
-//		return this.mstSkillPagerCondition.getCount();
-//	}
-//
-//	public String doPrev(){
-//		return null;
-//	}
-//	public String doNext(){
-//		return null;
-//	}
-//	///////////////////////////////////////////////////////////
+	public String getTextSkillCode() {
+		return this.textSkillCode;
+	}
+
+	public void setTextSkillCode(String textSkillCode) {
+		this.textSkillCode = textSkillCode;
+	}
+	public String getTextSkillDiv() {
+		return this.textSkillDiv;
+	}
+
+	public void setTextSkillDiv(String textSkillDiv) {
+		this.textSkillDiv = textSkillDiv;
+	}
+
+	public Integer getOffset() {
+		return offset;
+	}
+
+	public void setOffset(Integer offset) {
+		this.offset = offset;
+	}
+
+	public Integer getCurrentPageIndex() {
+		return currentPageIndex;
+	}
+
+	public void setCurrentPageIndex(Integer currentPageIndex) {
+		this.currentPageIndex = currentPageIndex;
+	}
+
+	public Integer getTotalPageIndex() {
+		return totalPageIndex;
+	}
+
+	public void setTotalPageIndex(Integer totalPageIndex) {
+		this.totalPageIndex = totalPageIndex;
+	}
+
+	public Integer getTotalNumber() {
+		return totalNumber;
+	}
+
+	public void setTotalNumber(Integer totalNumber) {
+		this.totalNumber = totalNumber;
+	}
 }

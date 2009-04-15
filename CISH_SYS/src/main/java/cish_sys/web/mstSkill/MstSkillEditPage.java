@@ -2,7 +2,6 @@ package cish_sys.web.mstSkill;
 
 import java.util.Date;
 
-import org.seasar.teeda.extension.annotation.convert.DateTimeConverter;
 import org.seasar.teeda.extension.annotation.validator.ByteLength;
 import org.seasar.teeda.extension.annotation.validator.Required;
 
@@ -29,10 +28,6 @@ public class MstSkillEditPage extends AbstractMstSkillPage {
 
 	public Class prerender() {
 		return null;
-	}
-
-	public String getMstSkillTitle(){
-		return "マスタメンテナンス【スキルマスタ】";
 	}
 
 	@Override
