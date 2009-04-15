@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+</head>
+<body>
+<form id="MstQualificationListForm">
+
+
+
+
+
+<input type="button" id="doCreate" value="Create" onclick="location.href='mstQualificationEdit.html'"/><br/>
+<table border="1" class="tablebg">
+	<thead>
+		<tr>
+			<th><span id="quaDivLabel">quaDiv</span></th>
+			<th><span id="quaCodeLabel">quaCode</span></th>
+			<th><span id="quaNameLabel">quaName</span></th>
+			<th><span id="insUserLabel">insUser</span></th>
+			<th><span id="insDateLabel">insDate</span></th>
+			<th><span id="updUserLabel">updUser</span></th>
+			<th><span id="updDateLabel">updDate</span></th>
+			<th><span id="delFlagLabel">delFlag</span></th>
+		</tr>
+	</thead>
+	<tbody id="mstQualificationItems">
+		<tr id="mstQualificationRow" class="row_even">
+			<td><span id="quaDiv">quaDiv</span></td>
+			<td><span id="quaCode">quaCode</span></td>
+			<td><span id="quaName">quaName</span></td>
+			<td><span id="insUser">insUser</span></td>
+			<td><span id="insDate">insDate</span></td>
+			<td><span id="updUser">updUser</span></td>
+			<td><span id="updDate">updDate</span></td>
+			<td><span id="delFlag">delFlag</span></td>
+			<td><a id="goMstQualificationEdit-edit" href="mstQualificationEdit.html?fixed_crudType=2&amp;quaDiv=quaDiv&amp;quaCode=quaCode">Edit</a>
+			<a id="goMstQualificationConfirm" href="mstQualificationConfirm.html?fixed_crudType=3&amp;quaDiv=quaDiv&amp;quaCode=quaCode">Delete</a>
+			<a id="goMstQualificationConfirm-confirm" href="mstQualificationConfirm.html?fixed_crudType=1&amp;quaDiv=quaDiv&amp;quaCode=quaCode">Inquire</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
+</form>
+</body></html>

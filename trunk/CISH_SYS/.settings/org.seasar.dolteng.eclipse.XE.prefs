@@ -1,0 +1,9 @@
+#Thu Apr 02 18:31:44 JST 2009
+Charset=MS932
+ConnectionName=XE
+ConnectionUrl=jdbc\:oracle\:thin\:@localhost\:1521\:xe
+DriverClass=oracle.jdbc.driver.OracleDriver
+DriverPath=/C\:/oraclexe/app/oracle/product/10.2.0/server/jdbc/lib/ojdbc14.jar|
+Pass=hr
+User=HR
+eclipse.preferences.version=1

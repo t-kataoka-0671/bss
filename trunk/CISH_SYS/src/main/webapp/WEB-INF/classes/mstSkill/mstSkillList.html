@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+	<title id="mstSkill">mstSkill</title>
+</head>
+<body>
+<span id="mstSkillTitle" class="title">mstSkill</span>
+<hr width="100%"/>
+<form id="MstSkillListForm">
+<table class="tablebg setborder">
+	<thead>
+		<tr>
+			<th class="setborder"><span id="skillDivLabel">skillDiv</span></th>
+			<th class="setborder"><span id="skillCodeLabel">skillCode</span></th>
+			<th class="setborder"><span id="skillNameLabel">skillName</span></th>
+			<th class="setborder"><span id="insUserLabel">insUser</span></th>
+			<th class="setborder"><span id="insDateLabel">insDate</span></th>
+			<th class="setborder"><span id="updUserLabel">updUser</span></th>
+			<th class="setborder"><span id="updDateLabel">updDate</span></th>
+			<th class="setborder"><span id="delFlagLabel">delFlag</span></th>
+			<th class="setborder" align="right">
+				<input type="button" id="doCreate" value="Create" onclick="location.href='mstSkillEdit.html'"/><br/>
+			</th>
+		</tr>
+	</thead>
+	<tbody id="mstSkillItems">
+		<tr id="mstSkillRow" class="row_even">
+			<td class="setborder"><span id="skillDiv">skillDiv</span>&nbsp;</td>
+			<td class="setborder"><span id="skillCode">skillCode</span>&nbsp;</td>
+			<td class="setborder"><span id="skillName">skillName</span>&nbsp;</td>
+			<td class="setborder"><span id="insUser">insUser</span>&nbsp;</td>
+			<td class="setborder"><span id="insDate">insDate</span>&nbsp;</td>
+			<td class="setborder"><span id="updUser">updUser</span>&nbsp;</td>
+			<td class="setborder"><span id="updDate">updDate</span>&nbsp;</td>
+			<td class="setborder"><span id="delFlag">delFlag</span>&nbsp;</td>
+			<td class="setborder">
+				<input type="hidden" id="skillDiv-hidden" />
+				<input type="hidden" id="skillCode-hidden" />
+				<input type="button" id="doEdit" value="Edit" onclick="location.href='mstSkillEdit.html'"/>
+				<input type="button" id="doDelete" value="Delete" onclick="location.href='mstSkillConfirm.html'"/>
+				<input type="button" id="doInquire" value="Inquire" onclick="location.href='mstSkillConfirm.html'"/>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</form>
+</body></html>

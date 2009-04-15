@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+</head>
+<body>
+<form id="MstEngineerListForm">
+
+
+
+
+
+<input type="button" id="doCreate" value="Create" onclick="location.href='mstEngineerEdit.html'"/><br/>
+<table border="1" class="tablebg">
+	<thead>
+		<tr>
+			<th><span id="engineerNoLabel">engineerNo</span></th>
+			<th><span id="stateFlagLabel">stateFlag</span></th>
+			<th><span id="kanjiNameLabel">kanjiName</span></th>
+			<th><span id="kanaNameLabel">kanaName</span></th>
+			<th><span id="sexLabel">sex</span></th>
+			<th><span id="birthLabel">birth</span></th>
+			<th><span id="zipCodeLabel">zipCode</span></th>
+			<th><span id="addressLabel">address</span></th>
+			<th><span id="telNoLabel">telNo</span></th>
+			<th><span id="mobileLabel">mobile</span></th>
+			<th><span id="pcMailLabel">pcMail</span></th>
+			<th><span id="mobileMailLabel">mobileMail</span></th>
+			<th><span id="nearStationLabel">nearStation</span></th>
+			<th><span id="routeLabel">route</span></th>
+			<th><span id="belongCompanyCodeLabel">belongCompanyCode</span></th>
+			<th><span id="belongPostLabel">belongPost</span></th>
+			<th><span id="passedCompanyCodeLabel">passedCompanyCode</span></th>
+			<th><span id="insUserLabel">insUser</span></th>
+			<th><span id="insDateLabel">insDate</span></th>
+			<th><span id="updUserLabel">updUser</span></th>
+			<th><span id="updDateLabel">updDate</span></th>
+		</tr>
+	</thead>
+	<tbody id="mstEngineerItems">
+		<tr id="mstEngineerRow" class="row_even">
+			<td><span id="engineerNo">engineerNo</span></td>
+			<td><span id="stateFlag">stateFlag</span></td>
+			<td><span id="kanjiName">kanjiName</span></td>
+			<td><span id="kanaName">kanaName</span></td>
+			<td><span id="sex">sex</span></td>
+			<td><span id="birth">birth</span></td>
+			<td><span id="zipCode">zipCode</span></td>
+			<td><span id="address">address</span></td>
+			<td><span id="telNo">telNo</span></td>
+			<td><span id="mobile">mobile</span></td>
+			<td><span id="pcMail">pcMail</span></td>
+			<td><span id="mobileMail">mobileMail</span></td>
+			<td><span id="nearStation">nearStation</span></td>
+			<td><span id="route">route</span></td>
+			<td><span id="belongCompanyCode">belongCompanyCode</span></td>
+			<td><span id="belongPost">belongPost</span></td>
+			<td><span id="passedCompanyCode">passedCompanyCode</span></td>
+			<td><span id="insUser">insUser</span></td>
+			<td><span id="insDate">insDate</span></td>
+			<td><span id="updUser">updUser</span></td>
+			<td><span id="updDate">updDate</span></td>
+			<td><a id="goMstEngineerEdit-edit" href="mstEngineerEdit.html?fixed_crudType=2&amp;engineerNo=engineerNo&amp;stateFlag=stateFlag">Edit</a>
+			<a id="goMstEngineerConfirm" href="mstEngineerConfirm.html?fixed_crudType=3&amp;engineerNo=engineerNo&amp;stateFlag=stateFlag">Delete</a>
+			<a id="goMstEngineerConfirm-confirm" href="mstEngineerConfirm.html?fixed_crudType=1&amp;engineerNo=engineerNo&amp;stateFlag=stateFlag">Inquire</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
+</form>
+</body></html>

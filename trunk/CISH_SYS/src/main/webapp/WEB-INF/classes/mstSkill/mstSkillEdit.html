@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+	<title id="mstSkill">mstSkill</title>
+</head>
+<body>
+<span id="mstSkillTitle" class="title">mstSkill</span>
+<hr width="100%"/>
+
+<form id="MstSkillEditForm"><input type="hidden" id="crudType" />
+<div>
+<span id="messages"></span>
+</div>
+<div id="isCreate">
+<!-- Create -->
+<input type="hidden" id="updUser" />
+<input type="hidden" id="updDate" />
+<table class="tablebg">
+<tr>
+	<td class="setborder"><span id="skillDivLabel">skillDiv</span></td>
+	<td class="bgwhite setborder"><input type="text" id="skillDiv"/></td>
+	<td class="bgwhite"><span id="skillDivMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="skillCodeLabel">skillCode</span></td>
+	<td class="bgwhite setborder"><input type="text" id="skillCode"/></td>
+	<td class="bgwhite"><span id="skillCodeMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="skillNameLabel">skillName</span></td>
+	<td class="bgwhite setborder"><input type="text" id="skillName"/></td>
+	<td class="bgwhite"><span id="skillNameMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="insUserLabel">insUser</span></td>
+	<td class="bgwhite setborder"><input type="text" id="insUser"/></td>
+	<td class="bgwhite"><span id="insUserMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="insDateLabel">insDate</span></td>
+	<td class="bgwhite setborder"><input type="text" id="insDate" class="T_date"/></td>
+	<td class="bgwhite"><span id="insDateMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="delFlagLabel">delFlag</span></td>
+	<td class="bgwhite setborder"><input type="text" id="delFlag"/></td>
+	<td class="bgwhite"><span id="delFlagMessage"></span></td>
+</tr>
+</table>
+</div>
+<div id="isNotCreate">
+<table class="tablebg">
+<tr>
+	<td class="setborder"><span id="skillDivLabel">skillDiv</span></td>
+	<td class="bgwhite setborder"><span id="skillDiv">skillDiv</span><input type="hidden" id="skillDiv-hidden" /></td>
+	<td class="bgwhite"><span id="skillDivMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="skillCodeLabel">skillCode</span></td>
+	<td class="bgwhite setborder"><span id="skillCode">skillCode</span><input type="hidden" id="skillCode-hidden" /></td>
+	<td class="bgwhite"><span id="skillCodeMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="skillNameLabel">skillName</span></td>
+	<td class="bgwhite setborder"><input type="text" id="skillName"/></td>
+	<td class="bgwhite"><span id="skillNameMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="insUserLabel">insUser</span></td>
+	<td class="bgwhite setborder"><span id="insUser">insUser</span><input type="hidden" id="insUser-hidden" /></td>
+	<td class="bgwhite"><span id="insUserMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="insDateLabel">insDate</span></td>
+	<td class="bgwhite setborder"><span id="insDate">insDate</span><input type="hidden" id="insDate-hidden" /></td>
+	<td class="bgwhite"><span id="insDateMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="updUserLabel">updUser</span></td>
+	<td class="bgwhite setborder"><input type="text" id="updUser"/></td>
+	<td class="bgwhite"><span id="updUserMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="updDateLabel">updDate</span></td>
+	<td class="bgwhite setborder"><input type="text" id="updDate" class="T_date"/></td>
+	<td class="bgwhite"><span id="updDateMessage"></span></td>
+</tr>
+<tr>
+	<td class="setborder"><span id="delFlagLabel">delFlag</span></td>
+	<td class="bgwhite setborder"><input type="text" id="delFlag"/></td>
+	<td class="bgwhite"><span id="delFlagMessage"></span></td>
+</tr>
+</table>
+</div>
+<table>
+	<tr>
+		<td>
+			<input type="button" id="jumpMstSkillList" value="Previous" onclick="location.href='mstSkillList.html'"/>
+		</td>
+		<td>
+			<div id="isNotRead">
+			<input type="button" id="goMstSkillConfirm" value="Confirm" onclick="location.href='mstSkillConfirm.html'"/>
+			</div>
+		</td>
+	</tr>
+</table>
+
+</form>
+</body></html>

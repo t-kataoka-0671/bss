@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+</head>
+<body>
+<form id="MstCompanyListForm">
+
+
+
+
+
+<input type="button" id="doCreate" value="Create" onclick="location.href='mstCompanyEdit.html'"/><br/>
+<table border="1" class="tablebg">
+	<thead>
+		<tr>
+			<th><span id="companyCodeLabel">companyCode</span></th>
+			<th><span id="companyNameLabel">companyName</span></th>
+			<th><span id="companyDivLabel">companyDiv</span></th>
+			<th><span id="rankLabel">rank</span></th>
+			<th><span id="insUserLabel">insUser</span></th>
+			<th><span id="insDateLabel">insDate</span></th>
+			<th><span id="updUserLabel">updUser</span></th>
+			<th><span id="updDateLabel">updDate</span></th>
+			<th><span id="stateFlagLabel">stateFlag</span></th>
+		</tr>
+	</thead>
+	<tbody id="mstCompanyItems">
+		<tr id="mstCompanyRow" class="row_even">
+			<td><span id="companyCode">companyCode</span></td>
+			<td><span id="companyName">companyName</span></td>
+			<td><span id="companyDiv">companyDiv</span></td>
+			<td><span id="rank">rank</span></td>
+			<td><span id="insUser">insUser</span></td>
+			<td><span id="insDate">insDate</span></td>
+			<td><span id="updUser">updUser</span></td>
+			<td><span id="updDate">updDate</span></td>
+			<td><span id="stateFlag">stateFlag</span></td>
+			<td><a id="goMstCompanyEdit-edit" href="mstCompanyEdit.html?fixed_crudType=2&amp;companyCode=companyCode">Edit</a>
+			<a id="goMstCompanyConfirm" href="mstCompanyConfirm.html?fixed_crudType=3&amp;companyCode=companyCode">Delete</a>
+			<a id="goMstCompanyConfirm-confirm" href="mstCompanyConfirm.html?fixed_crudType=1&amp;companyCode=companyCode">Inquire</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
+</form>
+</body></html>
