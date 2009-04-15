@@ -6,44 +6,95 @@
 	<title id="mstSkill">mstSkill</title>
 </head>
 <body>
-<span id="mstSkillTitle" class="title">mstSkill</span>
+<span id="mstSkillLabel" class="title">mstSkill</span>
 <hr width="100%"/>
 <form id="MstSkillListForm">
-<table class="tablebg setborder">
-	<thead>
-		<tr>
-			<th class="setborder"><span id="skillDivLabel">skillDiv</span></th>
-			<th class="setborder"><span id="skillCodeLabel">skillCode</span></th>
-			<th class="setborder"><span id="skillNameLabel">skillName</span></th>
-			<th class="setborder"><span id="insUserLabel">insUser</span></th>
-			<th class="setborder"><span id="insDateLabel">insDate</span></th>
-			<th class="setborder"><span id="updUserLabel">updUser</span></th>
-			<th class="setborder"><span id="updDateLabel">updDate</span></th>
-			<th class="setborder"><span id="delFlagLabel">delFlag</span></th>
-			<th class="setborder" align="right">
-				<input type="button" id="doCreate" value="Create" onclick="location.href='mstSkillEdit.html'"/><br/>
-			</th>
-		</tr>
-	</thead>
-	<tbody id="mstSkillItems">
-		<tr id="mstSkillRow" class="row_even">
-			<td class="setborder"><span id="skillDiv">skillDiv</span>&nbsp;</td>
-			<td class="setborder"><span id="skillCode">skillCode</span>&nbsp;</td>
-			<td class="setborder"><span id="skillName">skillName</span>&nbsp;</td>
-			<td class="setborder"><span id="insUser">insUser</span>&nbsp;</td>
-			<td class="setborder"><span id="insDate">insDate</span>&nbsp;</td>
-			<td class="setborder"><span id="updUser">updUser</span>&nbsp;</td>
-			<td class="setborder"><span id="updDate">updDate</span>&nbsp;</td>
-			<td class="setborder"><span id="delFlag">delFlag</span>&nbsp;</td>
-			<td class="setborder">
-				<input type="hidden" id="skillDiv-hidden" />
-				<input type="hidden" id="skillCode-hidden" />
-				<input type="button" id="doEdit" value="Edit" onclick="location.href='mstSkillEdit.html'"/>
-				<input type="button" id="doDelete" value="Delete" onclick="location.href='mstSkillConfirm.html'"/>
-				<input type="button" id="doInquire" value="Inquire" onclick="location.href='mstSkillConfirm.html'"/>
-			</td>
-		</tr>
-	</tbody>
+	<input type="hidden" id="offset"/>
+
+<table>
+	<tr>
+		<td>
+			<table width="100%">
+				<tr>
+					<td>
+						<table class="tablebg setborder">
+							<tr>
+								<td width="10"></td>
+								<th><span id="textSkillDivLabel">SkillDiv</span>：</th>
+								<td><input type="text" id="textSkillDiv"/></td>
+								<td width="20"></td>
+								<th><span id="textSkillCodeLabel">SkillCode</span>：</th>
+								<td><input type="text" id="textSkillCode"/></td>
+								<td width="10"></td>
+							</tr>
+						</table>
+					</td>
+					<td align="right"><input type="button" id="doRetrieve" value="retrieve"/></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="1"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%">
+				<tr>
+					<td align="left">
+						<span id="totalNumber">totalNumber</span>件
+					</td>
+					<td align="right">
+						<input type="button" id="doGoFirstPage" value="First Page" te:disabled="false" />
+						<input type="button" id="doGoPreviousPage" value="Previous Page" te:disabled="false" />
+						<span id="currentPageIndex">currentPageIndex</span>頁/<span id="totalPageIndex">totalPageIndex</span>頁
+						<input type="button" id="doGoNextPage" value="Next Page" te:disabled="false" />
+						<input type="button" id="doGoLastPage" value="Last Page" te:disabled="false" />
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table class="tablebg setborder">
+				<thead>
+					<tr>
+						<th class="setborder"><span id="skillDivLabel">skillDiv</span></th>
+						<th class="setborder"><span id="skillCodeLabel">skillCode</span></th>
+						<th class="setborder"><span id="skillNameLabel">skillName</span></th>
+						<th class="setborder"><span id="insUserLabel">insUser</span></th>
+						<th class="setborder"><span id="insDateLabel">insDate</span></th>
+						<th class="setborder"><span id="updUserLabel">updUser</span></th>
+						<th class="setborder"><span id="updDateLabel">updDate</span></th>
+						<th class="setborder"><span id="delFlagLabel">delFlag</span></th>
+						<th class="setborder" align="right">
+							<input type="button" id="doCreate" value="Create" onclick="location.href='mstSkillEdit.html'"/><br/>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="mstSkillItems">
+					<tr id="mstSkillRow" class="row_even">
+						<td class="setborder"><span id="skillDiv">skillDiv</span>&nbsp;</td>
+						<td class="setborder"><span id="skillCode">skillCode</span>&nbsp;</td>
+						<td class="setborder"><span id="skillName">skillName</span>&nbsp;</td>
+						<td class="setborder"><span id="insUser">insUser</span>&nbsp;</td>
+						<td class="setborder"><span id="insDate">insDate</span>&nbsp;</td>
+						<td class="setborder"><span id="updUser">updUser</span>&nbsp;</td>
+						<td class="setborder"><span id="updDate">updDate</span>&nbsp;</td>
+						<td class="setborder"><span id="delFlag">delFlag</span>&nbsp;</td>
+						<td class="setborder">
+							<input type="hidden" id="skillDiv-hidden" />
+							<input type="hidden" id="skillCode-hidden" />
+							<input type="button" id="doEdit" value="Edit" onclick="location.href='mstSkillEdit.html'"/>
+							<input type="button" id="doDelete" value="Delete" onclick="location.href='mstSkillConfirm.html'"/>
+							<input type="button" id="doInquire" value="Inquire" onclick="location.href='mstSkillConfirm.html'"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
 </table>
 
 </form>
