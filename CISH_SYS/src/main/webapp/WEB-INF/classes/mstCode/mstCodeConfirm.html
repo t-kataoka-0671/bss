@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+</head>
+<body>
+<form id="MstCodeConfirmForm"><input type="hidden" id="crudType" />
+<div>
+<span id="messages"></span>
+</div>
+<table class="tablebg">
+<tr>
+	<td><span id="codeDivLabel">codeDiv</span></td>
+	<td><span id="codeDiv">codeDiv</span><input type="hidden" id="codeDiv-hidden" /></td>
+	<td><span id="codeDivMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="codeLabel">code</span></td>
+	<td><span id="code">code</span><input type="hidden" id="code-hidden" /></td>
+	<td><span id="codeMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="codeNameLabel">codeName</span></td>
+	<td><span id="codeName">codeName</span><input type="hidden" id="codeName-hidden" /></td>
+	<td><span id="codeNameMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="insUserLabel">insUser</span></td>
+	<td><span id="insUser">insUser</span><input type="hidden" id="insUser-hidden" /></td>
+	<td><span id="insUserMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="insDateLabel">insDate</span></td>
+	<td><span id="insDate">insDate</span><input type="hidden" id="insDate-hidden" /></td>
+	<td><span id="insDateMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="updUserLabel">updUser</span></td>
+	<td><span id="updUser">updUser</span><input type="hidden" id="updUser-hidden" /></td>
+	<td><span id="updUserMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="updDateLabel">updDate</span></td>
+	<td><span id="updDate">updDate</span><input type="hidden" id="updDate-hidden" /></td>
+	<td><span id="updDateMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="delFlagLabel">delFlag</span></td>
+	<td><span id="delFlag">delFlag</span><input type="hidden" id="delFlag-hidden" /></td>
+	<td><span id="delFlagMessage"></span></td>
+</tr>
+</table>
+<div id="isComeFromList">
+	<input type="button" id="jumpMstCodeList" value="Previous"
+		onclick="location.href='MstCodeList.html'"
+	/>
+</div>
+<div id="isNotComeFromList">
+	<input type="button" id="jumpMstCodeEdit" value="Previous"
+		onclick="location.href='mstCodeEdit.html'" style="display: none;"/>
+</div>
+<div id="isNotRead">
+<input type="button" id="doFinish" value="Finish" onclick="location.href='mstCodeList.html'" />
+</div>
+</form>
+</body></html>

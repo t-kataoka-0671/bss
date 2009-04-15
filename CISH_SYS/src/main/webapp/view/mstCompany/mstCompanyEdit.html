@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+</head>
+<body>
+<form id="MstCompanyEditForm"><input type="hidden" id="crudType" />
+<div>
+<span id="messages"></span>
+</div>
+<table class="tablebg">
+<tr>
+	<td><span id="companyCodeLabel">companyCode</span></td>
+	<td><input type="text" id="companyCode"/></td>
+	<td><span id="companyCodeMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="companyNameLabel">companyName</span></td>
+	<td><input type="text" id="companyName"/></td>
+	<td><span id="companyNameMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="companyDivLabel">companyDiv</span></td>
+	<td><input type="text" id="companyDiv"/></td>
+	<td><span id="companyDivMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="rankLabel">rank</span></td>
+	<td><input type="text" id="rank"/></td>
+	<td><span id="rankMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="insUserLabel">insUser</span></td>
+	<td><input type="text" id="insUser"/></td>
+	<td><span id="insUserMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="insDateLabel">insDate</span></td>
+	<td><input type="text" id="insDate" class="T_date"/></td>
+	<td><span id="insDateMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="updUserLabel">updUser</span></td>
+	<td><input type="text" id="updUser"/></td>
+	<td><span id="updUserMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="updDateLabel">updDate</span></td>
+	<td><input type="text" id="updDate" class="T_date"/></td>
+	<td><span id="updDateMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="stateFlagLabel">stateFlag</span></td>
+	<td><input type="text" id="stateFlag"/></td>
+	<td><span id="stateFlagMessage"></span></td>
+</tr>
+</table>
+<input type="button" id="jumpMstCompanyList" value="Previous"
+	onclick="location.href='mstCompanyList.html'"/>
+<div id="isNotRead">
+<input type="button" id="goMstCompanyConfirm" value="Confirm"
+	onclick="location.href='mstCompanyConfirm.html'"/></div>
+</form>
+</body></html>

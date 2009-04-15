@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+</head>
+<body>
+<form id="MstSkillListForm">
+
+
+
+
+<table>
+	<tr>
+		<td><input type="button" id="doCreate" value="Create" onclick="location.href='mstSkillEdit.html'"/></td>
+		<td align="right">
+			<div id="isPrev">
+				<input type="button"  id="doPrev"  value="前のxx件"/>
+				<input type="hidden"  id="prevOffset"/>
+			</div>
+			総件数：<span id="count">1000</span>件
+			<div id="isNext">
+				<input type="button"  id="doNext"  value="次のxx件"/>
+				<input type="hidden"  id="nextOffset"/>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td rowspan=2>
+			<table border="1" class="tablebg">
+				<thead>
+					<tr>
+						<th><span id="skillDivLabel">skillDiv</span></th>
+						<th><span id="skillCodeLabel">skillCode</span></th>
+						<th><span id="skillNameLabel">skillName</span></th>
+						<th><span id="insUserLabel">insUser</span></th>
+						<th><span id="insDateLabel">insDate</span></th>
+						<th><span id="updUserLabel">updUser</span></th>
+						<th><span id="updDateLabel">updDate</span></th>
+						<th><span id="delFlagLabel">delFlag</span></th>
+					</tr>
+				</thead>
+				<tbody id="mstSkillItems">
+					<tr id="mstSkillRow" class="row_even">
+						<td><span id="skillDiv">skillDiv</span>&nbsp;</td>
+						<td><span id="skillCode">skillCode</span>&nbsp;</td>
+						<td><span id="skillName">skillName</span>&nbsp;</td>
+						<td><span id="insUser">insUser</span>&nbsp;</td>
+						<td><span id="insDate">insDate</span>&nbsp;</td>
+						<td><span id="updUser">updUser</span>&nbsp;</td>
+						<td><span id="updDate">updDate</span>&nbsp;</td>
+						<td><span id="delFlag">delFlag</span>&nbsp;</td>
+						<td><a id="goMstSkillEdit-edit" href="mstSkillEdit.html?fixed_crudType=2&amp;skillDiv=skillDiv&amp;skillCode=skillCode">Edit</a>
+						<a id="goMstSkillConfirm" href="mstSkillConfirm.html?fixed_crudType=3&amp;skillDiv=skillDiv&amp;skillCode=skillCode">Delete</a>
+						<a id="goMstSkillConfirm-confirm" href="mstSkillConfirm.html?fixed_crudType=1&amp;skillDiv=skillDiv&amp;skillCode=skillCode">Inquire</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+</table>
+
+</form>
+</body></html>

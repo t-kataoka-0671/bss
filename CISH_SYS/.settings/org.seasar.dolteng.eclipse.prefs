@@ -1,0 +1,9 @@
+#Wed Apr 15 09:47:39 JST 2009
+DaoType=S2Dao
+DefaultResourcePath=/CISH_SYS/src/main/resources
+DefaultRootPackage=cish_sys
+DefaultSrcPath=/CISH_SYS/src/main/java
+ServletPath=CISH_SYS
+WebContentsRoot=src/main/webapp
+eclipse.preferences.version=1
+prefs.children=XE,
