@@ -9,8 +9,8 @@ import cish_sys.paging.MstSkillPagerCondition;
 public interface MstSkillDao {
 	public MstSkill[] selectAll();
 
-	@Arguments({"argSkillCode","argSkillDiv"})
-	public MstSkill[] findBySkillCodeAndSkillDivPagerCondition(java.lang.String argSkillCode, java.lang.String argSkillDiv, MstSkillPagerCondition dto);
+	@Arguments({"argSkillCode","argSkillDiv","argSkillName"})
+	public MstSkill[] findBySkillCodeAndSkillDivAndSkillNamePagerCondition(java.lang.String argSkillCode, java.lang.String argSkillDiv, java.lang.String argSkillName, MstSkillPagerCondition dto);
 
 	@Arguments({"SKILL_DIV","SKILL_CODE"})
 	public MstSkill selectById(String skillDiv,String skillCode);

@@ -19,6 +19,8 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 
 	private String textSkillDiv;
 
+	private String textSkillName;
+
 	private Integer offset;
 
 	private Integer currentPageIndex;
@@ -50,7 +52,7 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 		dto.setLimit(limit);
 		dto.setOffset(mstSkillIndex);
 
-		mstSkillItems = getMstSkillDao().findBySkillCodeAndSkillDivPagerCondition(textSkillCode, textSkillDiv, dto);
+		mstSkillItems = getMstSkillDao().findBySkillCodeAndSkillDivAndSkillNamePagerCondition(textSkillCode, textSkillDiv, textSkillName, dto);
 		totalNumber = dto.getCount();
 
 		calculatePageIndex();
@@ -116,7 +118,13 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 		return isDoGoNextPageDisabled();
 	}
 
-
+	public boolean isRecData() {
+		if(totalNumber==null){
+			return false;
+		}else{
+			return totalNumber != 0;
+		}
+	}
 
 
 
@@ -173,7 +181,6 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 	public MstSkill[] getMstSkillItems() {
 		return this.mstSkillItems;
 	}
-
 	public void setMstSkillItems(MstSkill[] items) {
 		this.mstSkillItems = items;
 	}
@@ -181,7 +188,6 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 	public int getMstSkillIndex() {
 		return this.mstSkillIndex;
 	}
-
 	public void setMstSkillIndex(int mstSkillIndex) {
 		this.mstSkillIndex = mstSkillIndex;
 	}
@@ -189,22 +195,27 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 	public String getTextSkillCode() {
 		return this.textSkillCode;
 	}
-
 	public void setTextSkillCode(String textSkillCode) {
 		this.textSkillCode = textSkillCode;
 	}
+
 	public String getTextSkillDiv() {
 		return this.textSkillDiv;
 	}
-
 	public void setTextSkillDiv(String textSkillDiv) {
 		this.textSkillDiv = textSkillDiv;
+	}
+
+	public String getTextSkillName() {
+		return this.textSkillName;
+	}
+	public void setTextSkillName(String textSkillName) {
+		this.textSkillName = textSkillName;
 	}
 
 	public Integer getOffset() {
 		return offset;
 	}
-
 	public void setOffset(Integer offset) {
 		this.offset = offset;
 	}
@@ -212,7 +223,6 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 	public Integer getCurrentPageIndex() {
 		return currentPageIndex;
 	}
-
 	public void setCurrentPageIndex(Integer currentPageIndex) {
 		this.currentPageIndex = currentPageIndex;
 	}
@@ -220,7 +230,6 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 	public Integer getTotalPageIndex() {
 		return totalPageIndex;
 	}
-
 	public void setTotalPageIndex(Integer totalPageIndex) {
 		this.totalPageIndex = totalPageIndex;
 	}
@@ -228,7 +237,6 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 	public Integer getTotalNumber() {
 		return totalNumber;
 	}
-
 	public void setTotalNumber(Integer totalNumber) {
 		this.totalNumber = totalNumber;
 	}
