@@ -13,7 +13,7 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 
 	private MstSkill[] mstSkillItems;
 
-	private int mstSkillIndex = 1;
+	private int mstSkillIndex;
 
 	private String textSkillCode;
 
