@@ -118,16 +118,6 @@ public class MstSkillListPage extends AbstractMstSkillPage {
 		return isDoGoNextPageDisabled();
 	}
 
-	public boolean isRecData() {
-		if(totalNumber==null){
-			return false;
-		}else{
-			return totalNumber != 0;
-		}
-	}
-
-
-
 	public String getMstSkillRowClass() {
 		if (getMstSkillIndex() % 2 == 0) {
 			return "row_even";
