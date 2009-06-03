@@ -1,100 +1,104 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+	<title id="mstQualification">mstQualification</title>
 </head>
 <body>
+<span id="mstQualificationLabel" class="title">mstQualification</span>
+<hr width="100%"/>
 <form id="MstQualificationListForm">
-
-<table border="1" class="tablebg">
-	<tr>
-		<th>QuaDiv</th>
-		<td><input type="text" id="textQuaDiv"/></td>
-	</tr>
-	<tr>
-		<th>QuaCode</th>
-		<td><input type="text" id="textQuaCode"/></td>
-	</tr>
-	<tr>
-		<th>QuaName</th>
-		<td><input type="text" id="textQuaName"/></td>
-	</tr>
-	<tr>
-		<th></th><td><input type="button" id="doRetrieve" value="retrieve"/></td>
-	</tr>
-</table>
-<input type="hidden" id="offset"/>
-
-
-
-
-<input type="button" id="doCreate" value="Create" onclick="location.href='mstQualificationEdit.html'"/><br/>
-<table border="1" class="tablebg">
-	<thead>
-		<tr>
-			<th><span id="quaDivLabel">quaDiv</span></th>
-			<th><span id="quaCodeLabel">quaCode</span></th>
-			<th><span id="quaNameLabel">quaName</span></th>
-			<th><span id="insUserLabel">insUser</span></th>
-			<th><span id="insDateLabel">insDate</span></th>
-			<th><span id="updUserLabel">updUser</span></th>
-			<th><span id="updDateLabel">updDate</span></th>
-			<th><span id="delFlagLabel">delFlag</span></th>
-		</tr>
-	</thead>
-	<tbody id="mstQualificationItems">
-		<tr id="mstQualificationRow" class="row_even">
-			<td><span id="quaDiv">quaDiv</span></td>
-			<td><span id="quaCode">quaCode</span></td>
-			<td><span id="quaName">quaName</span></td>
-			<td><span id="insUser">insUser</span></td>
-			<td><span id="insDate">insDate</span></td>
-			<td><span id="updUser">updUser</span></td>
-			<td><span id="updDate">updDate</span></td>
-			<td><span id="delFlag">delFlag</span></td>
-			<td><a id="goMstQualificationEdit-edit" href="mstQualificationEdit.html?fixed_crudType=2&amp;quaDiv=quaDiv&amp;quaCode=quaCode">Edit</a>
-			<a id="goMstQualificationConfirm" href="mstQualificationConfirm.html?fixed_crudType=3&amp;quaDiv=quaDiv&amp;quaCode=quaCode">Delete</a>
-			<a id="goMstQualificationConfirm-confirm" href="mstQualificationConfirm.html?fixed_crudType=1&amp;quaDiv=quaDiv&amp;quaCode=quaCode">Inquire</a>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
+	<input type="hidden" id="offset"/>
 
 <table>
 	<tr>
 		<td>
-			<span id="totalNumber">totalNumber</span>Items
+			<table width="100%">
+				<tr>
+					<td>
+						<table class="tablebg setborder">
+							<tr>
+								<td width="10"></td>
+								<th><span id="textQuaDivLabel">QualificationDiv</span>：</th>
+								<td><input type="text" id="textQuaDiv" size="2"/></td>
+								<td width="20"></td>
+								<th><span id="textQuaCodeLabel">QualificationCode</span>：</th>
+								<td><input type="text" id="textQuaCode" size="3"/></td>
+								<td width="20"></td>
+								<th><span id="textQuaNameLabel">QualificationName</span>：</th>
+								<td><input type="text" id="textQuaName" size="20"/></td>
+								<td width="10"></td>
+							</tr>
+						</table>
+					</td>
+					<td align="right"><input type="button" id="doRetrieve" value="retrieve"/></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="1"></td>
+	</tr>
+	<tr>
+		<td>
+			<table width="100%">
+				<tr>
+					<td align="left">
+						全<span id="totalNumber">totalNumber</span>件
+					</td>
+					<td align="right">
+						<input type="button" id="doGoFirstPage" value="First Page" te:disabled="false" />
+						<input type="button" id="doGoPreviousPage" value="Previous Page" te:disabled="false" />
+						<span id="currentPageIndex">currentPageIndex</span>/<span id="totalPageIndex">totalPageIndex</span>
+						<input type="button" id="doGoNextPage" value="Next Page" te:disabled="false" />
+						<input type="button" id="doGoLastPage" value="Last Page" te:disabled="false" />
+					</td>
+				</tr>
+			</table>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<span id="currentPageIndex">currentPageIndex</span>/<span id="totalPageIndex">totalPageIndex</span>
+			<table class="tablebg setborder">
+				<thead>
+					<tr>
+						<th class="setborder"><span id="quaDivLabel">quaDiv</span></th>
+						<th class="setborder"><span id="quaCodeLabel">quaCode</span></th>
+						<th class="setborder"><span id="quaNameLabel">quaName</span></th>
+						<th class="setborder"><span id="insUserLabel">insUser</span></th>
+						<th class="setborder"><span id="insDateLabel">insDate</span></th>
+						<th class="setborder"><span id="updUserLabel">updUser</span></th>
+						<th class="setborder"><span id="updDateLabel">updDate</span></th>
+						<th class="setborder"><span id="delFlagLabel">delFlag</span></th>
+						<th class="setborder" align="right">
+							<input type="button" id="doCreate" value="Create" onclick="location.href='mstQualificationEdit.html'"/><br/>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="mstQualificationItems">
+					<tr id="mstQualificationRow" class="row_even">
+						<td class="setborder"><span id="quaDiv">quaDiv</span>&nbsp;</td>
+						<td class="setborder"><span id="quaCode">quaCode</span>&nbsp;</td>
+						<td class="setborder"><span id="quaName">quaName</span>&nbsp;</td>
+						<td class="setborder"><span id="insUser">insUser</span>&nbsp;</td>
+						<td class="setborder"><span id="insDate">insDate</span>&nbsp;</td>
+						<td class="setborder"><span id="updUser">updUser</span>&nbsp;</td>
+						<td class="setborder"><span id="updDate">updDate</span>&nbsp;</td>
+						<td class="setborder"><span id="delFlag">delFlag</span>&nbsp;</td>
+						<td class="setborder">
+							<input type="hidden" id="quaDiv-hidden" />
+							<input type="hidden" id="quaCode-hidden" />
+							<input type="button" id="doEdit" value="Edit" onclick="location.href='mstQualificationEdit.html'"/>
+							<input type="button" id="doDelete" value="Delete" onclick="location.href='mstQualificationConfirm.html'"/>
+							<input type="button" id="doInquire" value="Inquire" onclick="location.href='mstQualificationConfirm.html'"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</td>
 	</tr>
 </table>
-<table>
-	<tr>
-		<td>
-			<input type="button" id="doGoFirstPage" value="First Page" te:disabled="false" />
-		</td>
-		<td>
-			<input type="button" id="doGoPreviousPage" value="Previous Page" te:disabled="false" />
-		</td>
-		<td>
-			<input type="button" id="doGoNextPage" value="Next Page" te:disabled="false" />
-		</td>
-		<td>
-			<input type="button" id="doGoLastPage" value="Last Page" te:disabled="false" />
-		</td>
-	</tr>
-</table>
-
-
-
-
-
 
 </form>
 </body></html>
