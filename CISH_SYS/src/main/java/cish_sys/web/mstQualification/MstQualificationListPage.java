@@ -39,7 +39,7 @@ public class MstQualificationListPage extends AbstractMstQualificationPage {
 		return null;
 	}
 
-	/*	
+	/*
 	public Class prerender() {
 		mstQualificationItems = getMstQualificationDao().selectAll();
 		return null;
@@ -48,11 +48,11 @@ public class MstQualificationListPage extends AbstractMstQualificationPage {
 
 	public Class prerender() {
 		offset = mstQualificationIndex;
-	
+
 		MstQualificationPagerCondition dto = new MstQualificationPagerCondition();
 		dto.setLimit(limit);
 		dto.setOffset(mstQualificationIndex);
-	
+
 		mstQualificationItems = getMstQualificationDao().
 			findByQuaDivAndQuaCodeAndQuaNamePagerCondition(
 				textQuaDiv, textQuaCode, textQuaName, dto);
@@ -63,7 +63,7 @@ public class MstQualificationListPage extends AbstractMstQualificationPage {
 
 		return null;
 	}
-	
+
 	public void calculatePageIndex() {
 		currentPageIndex = offset/limit+1;
 		totalPageIndex = totalNumber/limit;
@@ -71,7 +71,7 @@ public class MstQualificationListPage extends AbstractMstQualificationPage {
 			totalPageIndex++;
 		}
 	}
-	
+
 	public Class doRetrieve() {
 		return null;
 	}
@@ -125,7 +125,7 @@ public class MstQualificationListPage extends AbstractMstQualificationPage {
 
 
 
-	
+
 	public String getMstQualificationRowClass() {
 		if (getMstQualificationIndex() % 2 == 0) {
 			return "row_even";
@@ -137,6 +137,30 @@ public class MstQualificationListPage extends AbstractMstQualificationPage {
 	public Class doCreate() {
 		setCrudType(CrudType.CREATE);
 		return MstQualificationEditPage.class;
+	}
+
+	@TakeOver(properties = "crudType,quaDiv,quaCode")
+	public Class doEdit() {
+		setCrudType(CrudType.UPDATE);
+		setQuaDiv(mstQualificationItems[getMstQualificationIndex()].getQuaDiv());
+		setQuaCode(mstQualificationItems[getMstQualificationIndex()].getQuaCode());
+		return MstQualificationEditPage.class;
+	}
+
+	@TakeOver(properties = "crudType,quaDiv,quaCode")
+	public Class doDelete() {
+		setCrudType(CrudType.DELETE);
+		setQuaDiv(mstQualificationItems[getMstQualificationIndex()].getQuaDiv());
+		setQuaCode(mstQualificationItems[getMstQualificationIndex()].getQuaCode());
+		return MstQualificationConfirmPage.class;
+	}
+
+	@TakeOver(properties = "crudType,quaDiv,quaCode")
+	public Class doInquire() {
+		setCrudType(CrudType.READ);
+		setQuaDiv(mstQualificationItems[getMstQualificationIndex()].getQuaDiv());
+		setQuaCode(mstQualificationItems[getMstQualificationIndex()].getQuaCode());
+		return MstQualificationConfirmPage.class;
 	}
 
 	@Override
@@ -158,11 +182,11 @@ public class MstQualificationListPage extends AbstractMstQualificationPage {
 	public void setMstQualificationItems(MstQualification[] items) {
 		this.mstQualificationItems = items;
 	}
-	
+
 	public int getMstQualificationIndex() {
 		return this.mstQualificationIndex;
 	}
-	
+
 	public void setMstQualificationIndex(int mstQualificationIndex) {
 		this.mstQualificationIndex = mstQualificationIndex;
 	}
@@ -192,7 +216,7 @@ public class MstQualificationListPage extends AbstractMstQualificationPage {
 	public Integer getOffset() {
 		return offset;
 	}
-	
+
 	public void setOffset(Integer offset) {
 		this.offset = offset;
 	}
@@ -200,23 +224,23 @@ public class MstQualificationListPage extends AbstractMstQualificationPage {
 	public Integer getCurrentPageIndex() {
 		return currentPageIndex;
 	}
-	
+
 	public void setCurrentPageIndex(Integer currentPageIndex) {
 		this.currentPageIndex = currentPageIndex;
 	}
-	
+
 	public Integer getTotalPageIndex() {
 		return totalPageIndex;
 	}
-	
+
 	public void setTotalPageIndex(Integer totalPageIndex) {
 		this.totalPageIndex = totalPageIndex;
 	}
-	
+
 	public Integer getTotalNumber() {
 		return totalNumber;
 	}
-	
+
 	public void setTotalNumber(Integer totalNumber) {
 		this.totalNumber = totalNumber;
 	}
