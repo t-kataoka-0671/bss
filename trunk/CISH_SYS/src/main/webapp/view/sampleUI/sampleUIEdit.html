@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+	<title id="title"></title>
+</head>
+<body>
+<span id="sampleUILabel" class="title"></span>
+<hr width="100%"/>
+
+<form id="sampleUIEditForm"><input type="hidden" id="crudType" />
+<table class="tablebg">
+	<tr>
+		<th class="setborder" rowspan="2">ラベルフィールド</th>
+		<td class="setborder" colspan="2">文字列を出力するコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<span id="outputText">outputText</span>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>span要素またはdiv要素またはcaption要素</li>
+				<li>idと同一のプロパティ名がPageクラスに存在するまたは idの値が"～Label"</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">テキストフィールド</th>
+		<td class="setborder" colspan="2">テキスト入力のコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<input type="text" id="inputText" value="inputText"/>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>input要素</li>
+				<li>typeがtextまたは指定されていない</li>
+				<li>idと同一のプロパティ名がPageクラスに存在する</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">パスワードフィールド</th>
+		<td class="setborder" colspan="2">password入力のコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<input type="password" id="inputSecret"  te:redisplay="true"/>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>input要素</li>
+				<li>typeがpassword</li>
+				<li>idと同一のプロパティ名がPageクラスに存在する</li>
+				<li>初期値を表示：「te:redisplay」属性を付け、値にtrueを指定 (<a href="#注">注</a>)</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">隠しフィールド</th>
+		<td class="setborder" colspan="2">hidden入力のコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<input type="hidden" id="inputHidden" value="inputHidden"/>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>input要素</li>
+				<li>typeがhidden</li>
+				<li>idと同一のプロパティ名がPageクラスに存在する</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">テキストエリア</th>
+		<td class="setborder" colspan="2">テキストエリア入力のコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<textarea id="inputTextarea">inputTextarea</textarea>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>textarea要素</li>
+				<li>idと同一のプロパティ名がPageクラスに存在する</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">ラジオボタン (静的)</th>
+		<td class="setborder" colspan="2">
+			ラジオ入力項目のコンポーネント<br/>
+			HTMLへ記述したradio項目をそのまま使用します<br/>
+			ラジオ入力項目コンポーネントには他にもselectOneRadioがありますが、こちらは項目が動的に変わる場合に使用するもの、という違いがあります<br/>
+		</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<span id="inputRadio">
+				<input type="radio" name="inputRadio" value="1" />One
+				<input type="radio" name="inputRadio" value="2" />Two
+				<input type="radio" name="inputRadio" value="3" />Three
+			</span>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>span要素またはdiv要素の子孫にinput要素のradio項目がある</li>
+				<li>span要素またはdiv要素のidと同一のプロパティ名がPageクラスに存在する</li>
+				<li>span要素またはdiv要素の子孫のradio項目のname属性が親のidと同じ</li>
+				<li>forEachと組み合わせて使用する場合は，span要素をforEachの外側に，input要素をforEachの内側に記述する</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">ラジオボタン (動的)</th>
+		<td class="setborder" colspan="2">ラジオ入力項目のコンポーネント<br/>項目を動的に変更することができます</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<span id="selectOneRadio">
+				<input type="radio" name="selectOneRadio"/>selectOneRadio
+			</span>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>radio要素</li>
+				<li>id+ItemsというListまたは配列のプロパティがPageにある</li>
+				<li>spanの配下にinputのradio項目がある</li>
+				<li>spanの配下のradio項目のname属性が親のidと同じ</li>
+				<li>Templateに書いてある値は実行時には消える</li>
+				<li>Requiredバリデーションが利かないのでラジオボタンが押されているかどうかは独自にチェックするしかない。<br/>ラジオボタンで選択されていなければプロパティがnullになる</li>
+				<li>一行に表示する項目を指定する場合：「te:col」属性を付け、値に表示する項目数を指定する (<a href="#注">注</a>)</li>
+				<li>縦に表示する場合：「te:layout」属性を付け、値にpageDirectionを指定する（デフォルトはlineDirection） (<a href="#注">注</a>)</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">チェックボックス (単一項目)</th>
+		<td class="setborder" colspan="2">単一のチェックボックス入力項目コンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<input type="checkbox" id="selectBooleanCheckbox" />selectBooleanCheckbox
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>input要素</li>
+				<li>type属性がcheckbox</li>
+				<li>idと同一のプロパティ名がPageクラスに存在する</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">チェックボックス (複数項目)</th>
+		<td class="setborder" colspan="2">複数チェックボックスの入力項目コンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<span id="selectManyCheckbox">
+				<input type="checkbox" name="selectManyCheckbox" value="1"/>One
+				<input type="checkbox" name="selectManyCheckbox" value="2"/>Two
+				<input type="checkbox" name="selectManyCheckbox" value="3"/>Three
+			</span>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>span要素とinput要素(typeはcheckbox)の組み合わせで構成</li>
+				<li>spanの配下のinput項目のname属性が親のidと同じ</li>
+				<li>id+ItemsというListまたは配列のプロパティがPageにある</li>
+				<li>Page側にidと同一のプロパティ名（型は配列）がある</li>
+				<li>Templateに書いてある値は実行時には消える</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">選択リスト (単一選択)</th>
+		<td class="setborder" colspan="2">プルダウン入力項目のコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<select id="selectOneMenu">
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>select要素</li>
+				<li>multiple属性がついていない</li>
+				<li>id+ItemsというListまたは配列のプロパティがPageにある</li>
+				<li>Templateに書いてある値は実行時には消える</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">選択リスト (複数選択)</th>
+		<td class="setborder" colspan="2">プルダウン入力項目のコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<select id="selectManyList" multiple="multiple">
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>select要素</li>
+				<li>multiple属性がついている</li>
+				<li>id+ItemsというListまたは配列のプロパティがPageにある</li>
+				<li>Templateに書いてある値は実行時には消える</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th class="setborder" rowspan="2">ファイルアップロード</th>
+		<td class="setborder" colspan="2">ファイルアップロードのコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<input type="file" id="inputFile" />
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>input要素</li>
+				<li>typeがfile</li>
+				<li>idと同一のプロパティ名がPageクラスに存在する</li>
+				<li>「<a href="http://teeda.seasar.org/ja/extension_features.html"> 機能リファレンス</a>」の「<a href="http://teeda.seasar.org/ja/extension_features.html#fileupload">ファイルアップロード</a>」を参照</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">日付フィールド(カレンダー)</th>
+		<td class="setborder" colspan="2">ポップアップするカレンダーコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<span id="popupCalendar" class="T_popupCalendar" />
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>span要素</li>
+				<li>idと同一のプロパティ名がPageクラスに存在する</li>
+				<li>class属性に"T_popupCalendar"と記述されている</li>
+			</ul>
+		</td>
+	</tr>
+
+
+	<tr>
+		<th class="setborder" rowspan="2">サブミットボタン</th>
+		<td colspan="3">サブミットコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<input type="submit" value="submit" id="goSampleUIConfirm"/>
+			<input type="button" value="button" id="doSampleUIConfirm" location.href="sampleUIConfirm.html"/>
+			<input type="image" value="image" id="jumpSampleUIConfirm"/>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>input要素</li>
+				<li>typeはsubmit、button、imageのどれか</li>
+				<li>idがgo、do、jumpのどれかで始まる</li>
+				<li>idがdoで始まる場合、idと同一のメソッドがPage/Actionクラスのどちらかに存在する</li>
+				<li>idがdoOnceで始まる場合、TransactionTokenが発行される</li>
+				<li>ダブルサブミット防止JavaScriptの設定詳細は<a href="http://teeda.seasar.org/ja/kumu_disabled.html">こちら</a>を参照</li>
+				<li>idがgoで始まる場合、Pageクラスのメソッドは呼ばれず、Validationはされます．値の引継ぎ機能は有効です</li>
+				<li>idがjumpで始まる場合、Pageクラスのメソッドは呼ばれず、Validationもされません．値の引継ぎ機能は無効です</li>
+				<li>onclick属性でlocation.hrefまたはhistory.back()がある場合Teeda側で除去します</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">繰り返し</th>
+		<td class="setborder" colspan="2">繰り返し項目コンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<ul id="forEachItems">
+				<li id="val">val</li>
+			</ul>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>div要素，span要素，table要素，tbody要素，tr要素，ol要素，ul要素，dl要素のいずれか</li>
+				<li>idの語尾がItemsで終わっている</li>
+				<li>id（xxxItems）と同名のListまたは配列のプロパティがPageにある</li>
+				<li>List/配列の中身のidとHTMLテンプレート上の繰り返し項目のidをあわせる</li>
+				<li>プロパティが配列の場合は，表示・更新とも可能</li>
+				<li>プロパティがリストの場合は，Seasar2.4.18以降+Java5以降との組み合わせでgenericsを使った場合のみ表示・更新とも可能．それ以外の場合は表示のみ可能</li>
+				<li>Itemsの中身はDtoまたはMapとする</li>
+			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">label</th>
+		<td class="setborder" colspan="2">外部ファイルから文字列を出力するコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			<label id="label"></label>
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>label要素</li>
+				<li>idがある</li>
+				<li>labelは、HTML名とidの組み合わせを使い、下記の順番で文字列を探索する<br/>ただしDynamicPropertyがあればそちらが優先される<br/>
+					<ol>
+						<li>HTML名.idがPageクラスと同一パッケージ上のlabel.propertiesにあるか</li>
+						<li>idのみでPageクラスと同一パッケージ上のlabel.propertiesにあるか</li>
+						<li>idのみでルートパッケージのlabel.propertiesにあるか</li>
+					</ol>
+				</li>
+  			</ul>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="setborder" rowspan="2">title</th>
+		<td class="setborder" colspan="3">titleを出力するコンポーネント</td>
+	</tr>
+	<tr>
+		<td class="bgwhite setborder">
+			↑タイトル参照
+		</td>
+		<td class="bgwhite setborder">
+			<ul>
+				<li>titleもlabelと同様の規約で文字列を取得する</li>
+  			</ul>
+		</td>
+	</tr>
+
+</table>
+<br/>
+<a name="注">
+(注)：Teeda Extension拡張要素やTeeda Extension拡張属性を使う場合は、Teeda Extensionの名前空間を接頭辞teで宣言する。<br/>
+xmlns:te="http://www.seasar.org/teeda/extension"
+</a>
+</form>
+</body>
+</html>
