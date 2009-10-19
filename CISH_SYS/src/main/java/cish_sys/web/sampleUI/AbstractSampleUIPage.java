@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.seasar.framework.util.ArrayUtil;
+
 import cish_sys.web.AbstractCrudPage;
 
 public abstract class AbstractSampleUIPage extends AbstractCrudPage {
@@ -28,8 +30,6 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 
 	private String[] selectManyCheckbox;
 
-	private String selectManyCheckboxValue;
-
 	private List selectManyCheckboxItems;
 
 	private String selectOneMenu;
@@ -37,8 +37,6 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 	private List selectOneMenuItems;
 
 	private String[] selectManyList;
-
-	private String selectManyListValue;
 
 	private List selectManyListItems;
 
@@ -48,7 +46,7 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 
 	private String commandButton;
 
-	private List forEach;
+	//private SampleUIForEachItemDto[] forEachItems;
 
 	public String getOutputText() {
 		return outputText;
@@ -123,6 +121,9 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 	}
 
 	public String[] getSelectManyCheckbox() {
+		if (selectManyCheckbox == null) {
+			selectManyCheckbox = new String[0];
+		}
 		return selectManyCheckbox;
 	}
 
@@ -131,11 +132,7 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 	}
 
 	public String getSelectManyCheckboxValue() {
-		return selectManyCheckboxValue;
-	}
-
-	public void setSelectManyCheckboxValue(String selectManyCheckboxValue) {
-		this.selectManyCheckboxValue = selectManyCheckboxValue;
+		return ArrayUtil.toString(getSelectManyCheckbox());
 	}
 
 	public List getSelectManyCheckboxItems() {
@@ -163,6 +160,9 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 	}
 
 	public String[] getSelectManyList() {
+		if (selectManyList == null) {
+			selectManyList = new String[0];
+		}
 		return selectManyList;
 	}
 
@@ -175,11 +175,7 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 	}
 
 	public String getSelectManyListValue() {
-		return selectManyListValue;
-	}
-
-	public void setSelectManyListValue(String selectManyListValue) {
-		this.selectManyListValue = selectManyListValue;
+		return ArrayUtil.toString(getSelectManyList());
 	}
 
 	public void setSelectManyListItems(List selectManyListItems) {
@@ -210,11 +206,12 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 		this.commandButton = commandButton;
 	}
 
-	public List getForEach() {
-		return forEach;
-	}
+	//public SampleUIForEachItemDto[] getForEachItems() {
+	//	return forEachItems;
+	//}
 
-	public void setForEach(List forEach) {
-		this.forEach = forEach;
-	}
+	//public void setForEachItems(SampleUIForEachItemDto[] forEachItems) {
+	//	this.forEachItems = forEachItems;
+	//}
+
 }

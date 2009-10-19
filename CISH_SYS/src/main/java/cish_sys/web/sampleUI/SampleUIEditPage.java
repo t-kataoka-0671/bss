@@ -11,7 +11,6 @@ import cish_sys.web.sampleUI.AbstractSampleUIPage;
 
 public class SampleUIEditPage extends AbstractSampleUIPage {
 
-	//private List<Map> Items;
 
 	public SampleUIEditPage(){
 		//テキストフィールド 初期値作成
@@ -28,19 +27,19 @@ public class SampleUIEditPage extends AbstractSampleUIPage {
 		//ラジオボタン(動的) 項目設定
 		//チェックボックス(複数項目) 項目設定
 		List RadioItems = new ArrayList();
-		selectListDto dto1 = new selectListDto();
+		SelectListDto dto1 = new SelectListDto();
 		dto1.setValue(1);
 		dto1.setLabel("One");
 		RadioItems.add(dto1);
-		selectListDto dto2 = new selectListDto();
+		SelectListDto dto2 = new SelectListDto();
 		dto2.setValue(2);
 		dto2.setLabel("Two");
 		RadioItems.add(dto2);
-		selectListDto dto3 = new selectListDto();
+		SelectListDto dto3 = new SelectListDto();
 		dto3.setValue(3);
 		dto3.setLabel("Three");
 		RadioItems.add(dto3);
-		selectListDto dto4 = new selectListDto();
+		SelectListDto dto4 = new SelectListDto();
 		dto4.setValue(4);
 		dto4.setLabel("Four");
 		RadioItems.add(dto4);
@@ -49,13 +48,12 @@ public class SampleUIEditPage extends AbstractSampleUIPage {
 		setSelectOneMenuItems(RadioItems);
 		setSelectManyListItems(RadioItems);
 
-		//Map ItemsMap = new LinkedHashMap();
-		//ItemsMap.put("1", "One");
-		//ItemsMap.put("2", "Two");
-		//ItemsMap.put("3", "Three");
-		//Items = new ArrayList<Map>();
-		//Items.add(ItemsMap);
-		//setForEach(Items);
+		//SampleUIForEachItemDto[] item = new SampleUIForEachItemDto[4];
+		//item[0].setVal("Value 1");
+		//item[1].setVal("Value 2");
+		//item[2].setVal("Value 3");
+		//item[3].setVal("Value 4");
+		//setForEachItems(item);
 
 		//初期値設定
 		setOutputText("outputText");
