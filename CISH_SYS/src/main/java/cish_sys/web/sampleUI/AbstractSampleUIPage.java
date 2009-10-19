@@ -22,21 +22,25 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 
 	private String selectOneRadio;
 
-	private List<Map> selectOneRadioItems;
+	private List selectOneRadioItems;
 
 	private Boolean selectBooleanCheckbox;
 
 	private String[] selectManyCheckbox;
 
-	private List<Map> selectManyCheckboxItems;
+	private String selectManyCheckboxValue;
+
+	private List selectManyCheckboxItems;
 
 	private String selectOneMenu;
 
-	private List<Map> selectOneMenuItems;
+	private List selectOneMenuItems;
 
 	private String[] selectManyList;
 
-	private List<Map> selectManyListItems;
+	private String selectManyListValue;
+
+	private List selectManyListItems;
 
 	private String inputFile;
 
@@ -44,7 +48,7 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 
 	private String commandButton;
 
-	private List<Map> forEach;
+	private List forEach;
 
 	public String getOutputText() {
 		return outputText;
@@ -102,11 +106,11 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 		this.selectOneRadio = selectOneRadio;
 	}
 
-	public List<Map> getSelectOneRadioItems() {
+	public List getSelectOneRadioItems() {
 		return selectOneRadioItems;
 	}
 
-	public void setSelectOneRadioItems(List<Map> selectOneRadioItems) {
+	public void setSelectOneRadioItems(List selectOneRadioItems) {
 		this.selectOneRadioItems = selectOneRadioItems;
 	}
 
@@ -126,11 +130,19 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 		this.selectManyCheckbox = selectManyCheckbox;
 	}
 
-	public List<Map> getSelectManyCheckboxItems() {
+	public String getSelectManyCheckboxValue() {
+		return selectManyCheckboxValue;
+	}
+
+	public void setSelectManyCheckboxValue(String selectManyCheckboxValue) {
+		this.selectManyCheckboxValue = selectManyCheckboxValue;
+	}
+
+	public List getSelectManyCheckboxItems() {
 		return selectManyCheckboxItems;
 	}
 
-	public void setSelectManyCheckboxItems(List<Map> selectManyCheckboxItems) {
+	public void setSelectManyCheckboxItems(List selectManyCheckboxItems) {
 		this.selectManyCheckboxItems = selectManyCheckboxItems;
 	}
 
@@ -142,11 +154,11 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 		this.selectOneMenu = selectOneMenu;
 	}
 
-	public List<Map> getSelectOneMenuItems() {
+	public List getSelectOneMenuItems() {
 		return selectOneMenuItems;
 	}
 
-	public void setSelectOneMenuItems(List<Map> selectOneMenuItems) {
+	public void setSelectOneMenuItems(List selectOneMenuItems) {
 		this.selectOneMenuItems = selectOneMenuItems;
 	}
 
@@ -158,11 +170,19 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 		this.selectManyList = selectManyList;
 	}
 
-	public List<Map> getSelectManyListItems() {
+	public List getSelectManyListItems() {
 		return selectManyListItems;
 	}
 
-	public void setSelectManyListItems(List<Map> selectManyListItems) {
+	public String getSelectManyListValue() {
+		return selectManyListValue;
+	}
+
+	public void setSelectManyListValue(String selectManyListValue) {
+		this.selectManyListValue = selectManyListValue;
+	}
+
+	public void setSelectManyListItems(List selectManyListItems) {
 		this.selectManyListItems = selectManyListItems;
 	}
 
@@ -190,11 +210,11 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 		this.commandButton = commandButton;
 	}
 
-	public List<Map> getForEach() {
+	public List getForEach() {
 		return forEach;
 	}
 
-	public void setForEach(List<Map> forEach) {
+	public void setForEach(List forEach) {
 		this.forEach = forEach;
 	}
 }
