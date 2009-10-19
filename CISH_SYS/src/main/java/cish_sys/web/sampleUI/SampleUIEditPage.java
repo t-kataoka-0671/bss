@@ -27,19 +27,19 @@ public class SampleUIEditPage extends AbstractSampleUIPage {
 		//ラジオボタン(動的) 項目設定
 		//チェックボックス(複数項目) 項目設定
 		List RadioItems = new ArrayList();
-		sSelectListDto dto1 = new sSelectListDto();
+		SelectListDto dto1 = new SelectListDto();
 		dto1.setValue(1);
 		dto1.setLabel("One");
 		RadioItems.add(dto1);
-		sSelectListDto dto2 = new sSelectListDto();
+		SelectListDto dto2 = new SelectListDto();
 		dto2.setValue(2);
 		dto2.setLabel("Two");
 		RadioItems.add(dto2);
-		sSelectListDto dto3 = new sSelectListDto();
+		SelectListDto dto3 = new SelectListDto();
 		dto3.setValue(3);
 		dto3.setLabel("Three");
 		RadioItems.add(dto3);
-		sSelectListDto dto4 = new sSelectListDto();
+		SelectListDto dto4 = new SelectListDto();
 		dto4.setValue(4);
 		dto4.setLabel("Four");
 		RadioItems.add(dto4);
