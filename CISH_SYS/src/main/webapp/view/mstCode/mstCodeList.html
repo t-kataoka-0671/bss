@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:te="http://www.seasar.org/teeda/extension" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/global.css"/>
+</head>
+<body>
+<form id="MstCodeListForm">
+
+<table border="1" class="tablebg">
+	<tr>
+		<th><span id="TextCodeName">CodeName</span></th>
+		<td><input type="text" id="textCodeName"/></td>
+	</tr>
+	<tr>
+		<th><span id="TextCodeDiv">CodeDiv</span></th>
+		<td><input type="text" id="textCodeDiv"/></td>
+	</tr>
+	<tr>
+		<th><span id="TextCode">Code</span></th>
+		<td><input type="text" id="textCode"/></td>
+	</tr>
+	<tr>
+		<th></th><td><input type="button" id="doRetrieve" value="retrieve"/></td>
+	</tr>
+</table>
+<input type="hidden" id="offset"/>
+
+
+
+
+<input type="button" id="doCreate" value="Create" onclick="location.href='mstCodeEdit.html'"/><br/>
+<table border="1" class="tablebg">
+	<thead>
+		<tr>
+			<th><span id="codeDivLabel">codeDiv</span></th>
+			<th><span id="codeLabel">code</span></th>
+			<th><span id="codeNameLabel">codeName</span></th>
+			<th><span id="insUserLabel">insUser</span></th>
+			<th><span id="insDateLabel">insDate</span></th>
+			<th><span id="updUserLabel">updUser</span></th>
+			<th><span id="updDateLabel">updDate</span></th>
+			<th><span id="delFlagLabel">delFlag</span></th>
+		</tr>
+	</thead>
+	<tbody id="mstCodeItems">
+		<tr id="mstCodeRow" class="row_even">
+			<th><span id="codeDiv">codeDiv</span></th>
+			<th><span id="code">code</span></th>
+			<td><span id="codeName">codeName</span></td>
+			<td><span id="insUser">insUser</span></td>
+			<td><span id="insDate">insDate</span></td>
+			<td><span id="updUser">updUser</span></td>
+			<td><span id="updDate">updDate</span></td>
+			<td><span id="delFlag">delFlag</span></td>
+			<td><a id="goMstCodeEdit-edit" href="mstCodeEdit.html?fixed_crudType=2&amp;codeDiv=codeDiv&amp;code=code">Edit</a>
+			<a id="goMstCodeConfirm" href="mstCodeConfirm.html?fixed_crudType=3&amp;codeDiv=codeDiv&amp;code=code">Delete</a>
+			<a id="goMstCodeConfirm-confirm" href="mstCodeConfirm.html?fixed_crudType=1&amp;codeDiv=codeDiv&amp;code=code">Inquire</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<table>
+	<tr>
+		<td>
+			<span id="totalNumber">totalNumber</span>Items
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span id="currentPageIndex">currentPageIndex</span>/<span id="totalPageIndex">totalPageIndex</span>
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td>
+			<input type="button" id="doGoFirstPage" value="First Page" te:disabled="false" />
+		</td>
+		<td>
+			<input type="button" id="doGoPreviousPage" value="Previous Page" te:disabled="false" />
+		</td>
+		<td>
+			<input type="button" id="doGoNextPage" value="Next Page" te:disabled="false" />
+		</td>
+		<td>
+			<input type="button" id="doGoLastPage" value="Last Page" te:disabled="false" />
+		</td>
+	</tr>
+</table>
+
+
+
+
+
+
+</form>
+</body></html>
