@@ -2,7 +2,7 @@ package cish_sys.web.sampleUI;
 
 import java.io.Serializable;
 
-public class selectListDto implements Serializable {
+public class sSelectListDto implements Serializable {
 
 		private static final long serialVersionUID = 1L;
 
