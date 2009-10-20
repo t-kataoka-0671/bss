@@ -9,8 +9,12 @@
 <form id="MstCodeEditForm"><input type="hidden" id="crudType" />
 <div>
 <span id="messages"></span>
-<span id="mstCodeLabel" class="title">mstCode</span>
+<span id="mstCodeLabel" class="title">mstCode</span><br/>
 </div>
+<div id="isCreate">
+<!-- Create -->
+<input type="hidden" id="updUser" />
+<input type="hidden" id="updDate" />
 <table class="tablebg">
 <tr>
 	<td><span id="codeDivLabel">codeDiv</span></td>
@@ -38,6 +42,41 @@
 	<td><span id="insDateMessage"></span></td>
 </tr>
 <tr>
+	<td><span id="delFlagLabel">delFlag</span></td>
+	<td><input type="text" id="delFlag"/></td>
+	<td><span id="delFlagMessage"></span></td>
+</tr>
+</table>
+</div>
+
+<div id="isNotCreate">
+<table class="tablebg">
+<tr>
+	<td><span id="codeDivLabel">codeDiv</span></td>
+	<td><input type="text" id="codeDiv"/></td>
+	<td><span id="codeDivMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="codeLabel">code</span></td>
+	<td><input type="text" id="code"/></td>
+	<td><span id="codeMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="codeNameLabel">codeName</span></td>
+	<td><input type="text" id="codeName"/></td>
+	<td><span id="codeNameMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="insUserLabel">insUser</span></td>
+	<td><input type="text" id="insUser"/><input type="hidden" id="insUser-hidden" /></td>
+	<td><span id="insUserMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="insDateLabel">insDate</span></td>
+	<td><input type="text" id="insDate" class="T_date"/><input type="hidden" id="insDate-hidden" /></td>
+	<td><span id="insDateMessage"></span></td>
+</tr>
+<tr>
 	<td><span id="updUserLabel">updUser</span></td>
 	<td><input type="text" id="updUser"/></td>
 	<td><span id="updUserMessage"></span></td>
@@ -53,6 +92,7 @@
 	<td><span id="delFlagMessage"></span></td>
 </tr>
 </table>
+</div>
 <input type="button" id="jumpMstCodeList" value="Previous"
 	onclick="location.href='mstCodeList.html'"/>
 <div id="isNotRead">
