@@ -6,14 +6,21 @@
 </head>
 <body>
 <form id="MstCodeConfirmForm"><input type="hidden" id="crudType" />
-        <input type="hidden" id="codeDiv" />
-        <input type="hidden" id="code" />
 <div>
 <span id="messages"></span>
 <span id="mstCodeLabel" class="title">mstCode</span>
-
-</div>
+</div><br/>
 <table class="tablebg">
+<tr>
+	<td><span id="codeDivLabel">code</span></td>
+	<td><span id="codeDiv">codeDiv</span><input type="hidden" id="codeDiv-hidden" /></td>
+	<td><span id="codeDivMessage"></span></td>
+</tr>
+<tr>
+	<td><span id="codeLabel">code</span></td>
+	<td><span id="code">code</span><input type="hidden" id="code-hidden" /></td>
+	<td><span id="codeMessage"></span></td>
+</tr>
 <tr>
 	<td><span id="codeNameLabel">codeName</span></td>
 	<td><span id="codeName">codeName</span><input type="hidden" id="codeName-hidden" /></td>

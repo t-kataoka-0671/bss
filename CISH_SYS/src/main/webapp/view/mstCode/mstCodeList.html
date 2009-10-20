@@ -4,20 +4,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="../../css/global.css"/>
 </head>
+
 <body>
 <form id="MstCodeListForm">
-
+<div>
+<span id="mstCodeLabel" class="title">mstCode</span><br/>
+</div>
 <table border="1" class="tablebg">
 	<tr>
-		<th><span id="TextCodeName">CodeName</span></th>
+		<th><span id="textCodeNameLabel">codeName</span></th>
 		<td><input type="text" id="textCodeName"/></td>
 	</tr>
 	<tr>
-		<th><span id="TextCodeDiv">CodeDiv</span></th>
+		<th><span id="textCodeDivLabel">codeDiv</span></th>
 		<td><input type="text" id="textCodeDiv"/></td>
 	</tr>
 	<tr>
-		<th><span id="TextCode">Code</span></th>
+		<th><span id="textCodeLabel">code</span></th>
 		<td><input type="text" id="textCode"/></td>
 	</tr>
 	<tr>
@@ -25,11 +28,10 @@
 	</tr>
 </table>
 <input type="hidden" id="offset"/>
-
-
-
+<br/>
 
 <input type="button" id="doCreate" value="Create" onclick="location.href='mstCodeEdit.html'"/><br/>
+
 <table border="1" class="tablebg">
 	<thead>
 		<tr>
