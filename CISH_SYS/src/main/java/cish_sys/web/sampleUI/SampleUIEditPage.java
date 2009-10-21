@@ -3,9 +3,6 @@ package cish_sys.web.sampleUI;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-//import java.util.Map;
-//import java.util.LinkedHashMap;
-//import java.lang.reflect.Array;
 
 import cish_sys.dto.SelectListDto;
 import cish_sys.web.sampleUI.AbstractSampleUIPage;
@@ -84,7 +81,7 @@ public class SampleUIEditPage extends AbstractSampleUIPage {
 		setSelectManyCheckbox(st);
 		setSelectOneMenu("2");
 		setSelectManyList(st);
-		setInputFile("inputFile");
+		//setInputFile("inputFile");
 		setPopupCalendar(Date.valueOf("2009-10-22"));
 	}
 

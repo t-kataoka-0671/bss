@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.seasar.framework.util.ArrayUtil;
+import org.seasar.teeda.extension.util.UploadedFile;
 
 import cish_sys.web.AbstractCrudPage;
 
@@ -40,7 +41,7 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 
 	private List selectManyListItems;
 
-	private String inputFile;
+	private UploadedFile inputFile;
 
 	private Date popupCalendar;
 
@@ -182,11 +183,11 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 		this.selectManyListItems = selectManyListItems;
 	}
 
-	public String getInputFile() {
+	public UploadedFile getInputFile() {
 		return inputFile;
 	}
 
-	public void setInputFile(String inputFile) {
+	public void setInputFile(UploadedFile inputFile) {
 		this.inputFile = inputFile;
 	}
 
