@@ -1,4 +1,4 @@
-package cish_sys.web.sampleUI;
+package cish_sys.dto;
 
 import java.io.Serializable;
 

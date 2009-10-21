@@ -7,6 +7,7 @@ import java.util.List;
 //import java.util.LinkedHashMap;
 //import java.lang.reflect.Array;
 
+import cish_sys.dto.SelectListDto;
 import cish_sys.web.sampleUI.AbstractSampleUIPage;
 
 public class SampleUIEditPage extends AbstractSampleUIPage {
@@ -48,12 +49,28 @@ public class SampleUIEditPage extends AbstractSampleUIPage {
 		setSelectOneMenuItems(RadioItems);
 		setSelectManyListItems(RadioItems);
 
-		//SampleUIForEachItemDto[] item = new SampleUIForEachItemDto[4];
-		//item[0].setVal("Value 1");
-		//item[1].setVal("Value 2");
-		//item[2].setVal("Value 3");
-		//item[3].setVal("Value 4");
-		//setForEachItems(item);
+		List ForItems = new ArrayList();
+		SampleUIForEachItemDto forItem1 = new SampleUIForEachItemDto();
+		forItem1.setForEachId(1);
+		forItem1.setForEachVal("Value 1");
+		ForItems.add(forItem1);
+		SampleUIForEachItemDto forItem2 = new SampleUIForEachItemDto();
+		forItem2.setForEachId(2);
+		forItem2.setForEachVal("Value 2");
+		ForItems.add(forItem2);
+		SampleUIForEachItemDto forItem3 = new SampleUIForEachItemDto();
+		forItem3.setForEachId(3);
+		forItem3.setForEachVal("Value 3");
+		ForItems.add(forItem3);
+		SampleUIForEachItemDto forItem4 = new SampleUIForEachItemDto();
+		forItem4.setForEachId(4);
+		forItem4.setForEachVal("Value 4");
+		ForItems.add(forItem4);
+		SampleUIForEachItemDto forItem5 = new SampleUIForEachItemDto();
+		forItem5.setForEachId(5);
+		forItem5.setForEachVal("Value 5");
+		ForItems.add(forItem5);
+		setForEachItems(ForItems);
 
 		//初期値設定
 		setOutputText("outputText");

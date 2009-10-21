@@ -6,13 +6,23 @@ public class SampleUIForEachItemDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String val;
+	private int forEachId;
 
-	public String getVal() {
-		return val;
+	private String forEachVal;
+
+	public int getForEachId() {
+		return forEachId;
 	}
 
-	public void setVal(String val) {
-		this.val = val;
+	public void setForEachId(int forEachId) {
+		this.forEachId = forEachId;
+	}
+
+	public String getForEachVal() {
+		return forEachVal;
+	}
+
+	public void setForEachVal(String forEachVal) {
+		this.forEachVal = forEachVal;
 	}
 }

@@ -46,7 +46,7 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 
 	private String commandButton;
 
-	//private SampleUIForEachItemDto[] forEachItems;
+	private List forEachItems;
 
 	public String getOutputText() {
 		return outputText;
@@ -206,12 +206,12 @@ public abstract class AbstractSampleUIPage extends AbstractCrudPage {
 		this.commandButton = commandButton;
 	}
 
-	//public SampleUIForEachItemDto[] getForEachItems() {
-	//	return forEachItems;
-	//}
+	public List getForEachItems() {
+		return forEachItems;
+	}
 
-	//public void setForEachItems(SampleUIForEachItemDto[] forEachItems) {
-	//	this.forEachItems = forEachItems;
-	//}
+	public void setForEachItems(List forEachItems) {
+		this.forEachItems = forEachItems;
+	}
 
 }

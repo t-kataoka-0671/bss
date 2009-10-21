@@ -1,12 +1,15 @@
 package cish_sys.web.mstSkill;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.seasar.teeda.extension.annotation.validator.ByteLength;
 import org.seasar.teeda.extension.annotation.validator.Required;
 
 import org.seasar.teeda.core.exception.AppFacesException;
 
+import cish_sys.dto.SelectListDto;
 import cish_sys.entity.MstSkill;
 import cish_sys.web.CrudType;
 
@@ -23,6 +26,18 @@ public class MstSkillEditPage extends AbstractMstSkillPage {
 			}
 			getMstSkillDxo().convert(data ,this);
 		}
+
+		List PullDownItems = new ArrayList();
+		SelectListDto dto1 = new SelectListDto();
+		dto1.setValue(0);
+		dto1.setLabel("0:使用可");
+		PullDownItems.add(dto1);
+		SelectListDto dto2 = new SelectListDto();
+		dto2.setValue(1);
+		dto2.setLabel("1:使用不可");
+		PullDownItems.add(dto2);
+		setDelFlagItems(PullDownItems);
+
 		return null;
 	}
 
@@ -75,7 +90,9 @@ public class MstSkillEditPage extends AbstractMstSkillPage {
 			super.setInsDate(sysDate);
 			return true;
 		}else{
-			super.setUpdDate(sysDate);
+			if(getUpdDate()==null){
+				super.setUpdDate(sysDate);
+			}
 			return false;
 		}
 	}

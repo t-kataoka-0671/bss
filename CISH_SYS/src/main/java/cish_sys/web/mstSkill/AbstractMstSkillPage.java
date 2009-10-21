@@ -1,16 +1,19 @@
 package cish_sys.web.mstSkill;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import cish_sys.dao.MstSkillDao;
+import cish_sys.dto.SelectListDto;
 import cish_sys.web.AbstractCrudPage;
 
 public abstract class AbstractMstSkillPage extends AbstractCrudPage {
 
 	private MstSkillDao mstSkillDao;
-	
+
 	private MstSkillDxo mstSkillDxo;
-	
+
 	private String skillDiv;
 
 	private String skillCode;
@@ -26,6 +29,8 @@ public abstract class AbstractMstSkillPage extends AbstractCrudPage {
 	private Date updDate;
 
 	private String delFlag;
+
+	private List delFlagItems;
 
 	public AbstractMstSkillPage() {
 	}
@@ -80,11 +85,34 @@ public abstract class AbstractMstSkillPage extends AbstractCrudPage {
 		this.updDate = upddate;
 	}
 	public String getDelFlag() {
+		if(this.delFlag==null){
+			this.delFlag = "0";
+		}
 		return this.delFlag;
 	}
 
 	public void setDelFlag(String delflag) {
 		this.delFlag = delflag;
+	}
+
+	public List getDelFlagItems() {
+		//if(this.delFlagItems==null){
+		//	List PullDownItems = new ArrayList();
+		//	SelectListDto dto1 = new SelectListDto();
+		//	dto1.setValue(0);
+		//	dto1.setLabel("0:使用可");
+		//	PullDownItems.add(dto1);
+		//	SelectListDto dto2 = new SelectListDto();
+		//	dto2.setValue(1);
+		//	dto2.setLabel("1:使用不可");
+		//	PullDownItems.add(dto2);
+		//	this.delFlagItems = PullDownItems;
+		//}
+		return this.delFlagItems;
+	}
+
+	public void setDelFlagItems(List delFlagItems) {
+		this.delFlagItems = delFlagItems;
 	}
 
 	public MstSkillDao getMstSkillDao() {
