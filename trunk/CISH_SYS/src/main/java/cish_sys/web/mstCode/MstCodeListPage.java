@@ -8,6 +8,8 @@ import org.seasar.teeda.extension.annotation.takeover.TakeOver;
 
 import cish_sys.entity.MstCode;
 import cish_sys.web.CrudType;
+import cish_sys.web.mstSkill.MstSkillConfirmPage;
+import cish_sys.web.mstSkill.MstSkillEditPage;
 
 import cish_sys.paging.MstCodePagerCondition;
 
@@ -43,11 +45,11 @@ public class MstCodeListPage extends AbstractMstCodePage {
 
 	public Class<?> prerender() {
 		offset = mstCodeIndex;
-	
+
 		MstCodePagerCondition dto = new MstCodePagerCondition();
 		dto.setLimit(limit);
 		dto.setOffset(mstCodeIndex);
-	
+
 		mstCodeItems = getMstCodeDao().
 			findByCodeNameAndCodeDivAndCodePagerCondition(
 				textCodeName, textCodeDiv, textCode, dto);
@@ -58,7 +60,7 @@ public class MstCodeListPage extends AbstractMstCodePage {
 
 		return null;
 	}
-	
+
 	public void calculatePageIndex() {
 		currentPageIndex = offset/limit+1;
 		totalPageIndex = totalNumber/limit;
@@ -66,7 +68,7 @@ public class MstCodeListPage extends AbstractMstCodePage {
 			totalPageIndex++;
 		}
 	}
-	
+
 	public Class<?> doRetrieve() {
 		return null;
 	}
@@ -116,7 +118,7 @@ public class MstCodeListPage extends AbstractMstCodePage {
 	public boolean isDoGoLastPageDisabled() {
 		return isDoGoNextPageDisabled();
 	}
-	
+
 	public String getMstCodeRowClass() {
 		if (getMstCodeIndex() % 2 == 0) {
 			return "row_even";
@@ -128,6 +130,30 @@ public class MstCodeListPage extends AbstractMstCodePage {
 	public Class<?> doCreate() {
 		setCrudType(CrudType.CREATE);
 		return MstCodeEditPage.class;
+	}
+
+	@TakeOver(properties = "crudType,codeDiv,code")
+	public Class doEdit() {
+		setCrudType(CrudType.UPDATE);
+		setCodeDiv(mstCodeItems[getMstCodeIndex()].getCodeDiv());
+		setCode(mstCodeItems[getMstCodeIndex()].getCode());
+		return MstCodeEditPage.class;
+	}
+
+	@TakeOver(properties = "crudType,codeDiv,code")
+	public Class doDelete() {
+		setCrudType(CrudType.DELETE);
+		setCodeDiv(mstCodeItems[getMstCodeIndex()].getCodeDiv());
+		setCode(mstCodeItems[getMstCodeIndex()].getCode());
+		return MstCodeConfirmPage.class;
+	}
+
+	@TakeOver(properties = "crudType,codeDiv,code")
+	public Class doInquire() {
+		setCrudType(CrudType.READ);
+		setCodeDiv(mstCodeItems[getMstCodeIndex()].getCodeDiv());
+		setCode(mstCodeItems[getMstCodeIndex()].getCode());
+		return MstCodeConfirmPage.class;
 	}
 
 	@Override
@@ -149,11 +175,11 @@ public class MstCodeListPage extends AbstractMstCodePage {
 	public void setMstCodeItems(MstCode[] items) {
 		this.mstCodeItems = items;
 	}
-	
+
 	public int getMstCodeIndex() {
 		return this.mstCodeIndex;
 	}
-	
+
 	public void setMstCodeIndex(int mstCodeIndex) {
 		this.mstCodeIndex = mstCodeIndex;
 	}
@@ -186,7 +212,7 @@ public class MstCodeListPage extends AbstractMstCodePage {
 	public Integer getOffset() {
 		return offset;
 	}
-	
+
 	public void setOffset(Integer offset) {
 		this.offset = offset;
 	}
@@ -194,23 +220,23 @@ public class MstCodeListPage extends AbstractMstCodePage {
 	public Integer getCurrentPageIndex() {
 		return currentPageIndex;
 	}
-	
+
 	public void setCurrentPageIndex(Integer currentPageIndex) {
 		this.currentPageIndex = currentPageIndex;
 	}
-	
+
 	public Integer getTotalPageIndex() {
 		return totalPageIndex;
 	}
-	
+
 	public void setTotalPageIndex(Integer totalPageIndex) {
 		this.totalPageIndex = totalPageIndex;
 	}
-	
+
 	public Integer getTotalNumber() {
 		return totalNumber;
 	}
-	
+
 	public void setTotalNumber(Integer totalNumber) {
 		this.totalNumber = totalNumber;
 	}
