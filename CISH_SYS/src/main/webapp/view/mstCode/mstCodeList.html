@@ -10,6 +10,7 @@
 <div>
 <span id="mstCodeLabel" class="title">mstCode</span><br/>
 </div>
+<hr width="100%"/>
 <br/>
 <table border="1" class="tablebg">
 	<tr>
@@ -19,29 +20,22 @@
 		<td><input type="text" id="textCode" size="3"/></td>
 		<th><span id="textCodeNameLabel">codeName</span></th>
 		<td><input type="text" id="textCodeName" size="20"/></td>
-		<th></th><td><input type="button" id="doRetrieve" value="retrieve"/></td>
+		<th></th><td class="bgwhite"><input type="button" id="doRetrieve" value="retrieve"/></td>
 	</tr>
 </table>
 <input type="hidden" id="offset"/>
 <br/>
 
-<table>
+<table width="100%">
 	<tr>
-		<td>
-			全<span id="totalNumber">totalNumber</span>件
+		<td align="left">全<span id="totalNumber">totalNumber</span>件</td>
+		<td>&nbsp;&nbsp;
+			<input type="button" id="doGoFirstPage" value="First Page" te:disabled="false" />
+			<input type="button" id="doGoPreviousPage" value="Previous Page" te:disabled="false" />
+			<span id="currentPageIndex">currentPageIndex</span>/<span id="totalPageIndex">totalPageIndex</span>
+			<input type="button" id="doGoNextPage" value="Next Page" te:disabled="false" />
+			<input type="button" id="doGoLastPage" value="Last Page" te:disabled="false" />
 		</td>
-	</tr>
-	<tr>
-	</tr>
-</table>
-
-<table>
-	<tr>
-		<td><input type="button" id="doGoFirstPage" value="First Page" te:disabled="false" /></td>
-		<td><input type="button" id="doGoPreviousPage" value="Previous Page" te:disabled="false" /></td>
-		<td><span id="currentPageIndex">currentPageIndex</span>/<span id="totalPageIndex">totalPageIndex</span></td>
-		<td><input type="button" id="doGoNextPage" value="Next Page" te:disabled="false" /></td>
-		<td><input type="button" id="doGoLastPage" value="Last Page" te:disabled="false" /></td>
 	</tr>
 </table>
 
