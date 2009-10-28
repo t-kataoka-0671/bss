@@ -8,9 +8,6 @@ import org.seasar.teeda.extension.annotation.takeover.TakeOver;
 
 import cish_sys.entity.MstCode;
 import cish_sys.web.CrudType;
-import cish_sys.web.mstSkill.MstSkillConfirmPage;
-import cish_sys.web.mstSkill.MstSkillEditPage;
-
 import cish_sys.paging.MstCodePagerCondition;
 
 public class MstCodeListPage extends AbstractMstCodePage {
@@ -24,7 +21,6 @@ public class MstCodeListPage extends AbstractMstCodePage {
 	private String textCodeDiv;
 
 	private String textCode;
-
 
 	private Integer offset;
 
@@ -102,6 +98,8 @@ public class MstCodeListPage extends AbstractMstCodePage {
 		mstCodeIndex = offset;
 		return null;
 	}
+
+
 
 	public boolean isDoGoFirstPageDisabled() {
 		return offset == 0;
