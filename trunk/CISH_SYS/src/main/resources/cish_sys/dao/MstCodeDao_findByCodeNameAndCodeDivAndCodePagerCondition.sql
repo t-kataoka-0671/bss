@@ -11,4 +11,4 @@ select * from MST_CODE
          and CODE LIKE concat(/*argCode*/' ','%')
        /*END*/
 /*END*/
- ORDER BY CODE_NAME,CODE_DIV,CODE
+ ORDER BY CODE_DIV,CODE,CODE_NAME
